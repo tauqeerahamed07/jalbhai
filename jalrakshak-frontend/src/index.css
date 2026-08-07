@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@theme {
+  --color-ink: #0b201c;
+  --color-deep: #0e4749;
+  --color-monsoon: #1c7c93;
+  --color-rain: #1f9db8;
+  --color-leaf: #4f7d3a;
+  --color-paper: #f4f7f3;
+  --color-card: #ffffff;
+  --color-line: #d9e3dd;
+  --color-amber: #b8721f;
+  --color-inksoft: #4c5d58;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Dimension-tick divider used as a recurring survey/engineering motif */
+.tick-rule {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-line) 0,
+    var(--color-line) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  height: 1px;
+}
+
+.leaflet-container {
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
