@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+    @page { size: A4; margin: 2cm; }
+    body { font-family: 'DejaVu Sans', Arial, sans-serif; color: #1a2e2e; font-size: 12px; }
+    h1 { color: #0f3d3e; font-size: 22px; margin-bottom: 0; }
+    .subtitle { color: #4a6b6b; font-size: 12px; margin-top: 2px; }
+    .section { margin-top: 18px; }
+    .section h2 { font-size: 15px; color: #0f3d3e; border-bottom: 1px solid #cfe0df; padding-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    td, th { padding: 5px 8px; text-align: left; border-bottom: 1px solid #e5efee; font-size: 11.5px; }
+    th { color: #4a6b6b; font-weight: 600; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 10px; background: #103d3e; color: white; font-size: 12px; }
+    .structure-box { background: #f2f8f7; border: 1px solid #cfe0df; border-radius: 6px; padding: 10px 14px; margin-top: 8px; }
+    .notes { font-size: 10.5px; color: #6a7f7f; margin-top: 6px; }
+    .footer { margin-top: 30px; padding-top: 10px; border-top: 1px solid #cfe0df; font-size: 9.5px; color: #7a8a8a; }
+</style>
+</head>
+<body>
+    <h1>JalRakshak – RTRWH / AR Assessment Report</h1>
+    <div class="subtitle">{{ address_label or "Location: " ~ latitude ~ ", " ~ longitude }} &nbsp;|&nbsp; Generated for demo purposes</div>
+
+    <div class="section">
+        <h2>Feasibility</h2>
+        <span class="badge">{{ feasibility_classification | replace("_", " ") | title }}</span>
+    </div>
+
+    <div class="section">
+        <h2>Site Inputs</h2>
+        <table>
+            <tr><th>Roof area</th><td>{{ roof_area_sqm }} sqm</td></tr>
+            <tr><th>Roof type</th><td>{{ roof_type }}</td></tr>
+            <tr><th>Open space</th><td>{{ open_space_type }} ({{ open_space_area_sqm or 0 }} sqm)</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Rainfall &amp; Soil</h2>
+        <table>
+            <tr><th>Annual rainfall</th><td>{{ rainfall.annual_total_mm }} mm ({{ rainfall.data_source }})</td></tr>
+            <tr><th>Soil texture</th><td>{{ soil.texture_class }} ({{ soil.data_source }})</td></tr>
+            <tr><th>Infiltration rate</th><td>{{ soil.infiltration_rate_mm_hr }} mm/hr</td></tr>
+            <tr><th>Nearest CGWB station</th><td>{{ groundwater.nearest_station_name }} ({{ groundwater.distance_km }} km away)</td></tr>
+            <tr><th>Depth to water table</th><td>{{ groundwater.depth_to_water_table_m }} m ({{ groundwater.reading_date }})</td></tr>
+            <tr><th>Elevation</th><td>{{ elevation.elevation_m }} m</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Harvestable Volume</h2>
+        <table>
+            <tr><th>Deterministic estimate</th><td>{{ volume_estimate.deterministic_litres_per_year | round(0) }} litres/year</td></tr>
+            <tr><th>Model range (P10 – P90)</th><td>{{ volume_estimate.ml_p10_litres_per_year | round(0) }} – {{ volume_estimate.ml_p90_litres_per_year | round(0) }} litres/year</td></tr>
+            <tr><th>Model median (P50)</th><td>{{ volume_estimate.ml_p50_litres_per_year | round(0) }} litres/year</td></tr>
+            <tr><th>Model confidence</th><td>{{ (volume_estimate.ml_confidence * 100) | round(0) }}%</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Recommended Structure</h2>
+        <div class="structure-box">
+            <strong>{{ structure_recommendation.structure_type | replace("_", " ") | title }}</strong><br>
+            {% for k, v in structure_recommendation.dimensions.items() %}
+                {{ k | replace("_", " ") | title }}: {{ v }}&nbsp;&nbsp;
+            {% endfor %}
+            <p>{{ structure_recommendation.rationale }}</p>
+        </div>
+    </div>
+
+    {% if notes %}
+    <div class="section">
+        <h2>Data Notes</h2>
+        <ul class="notes">
+            {% for n in notes %}<li>{{ n }}</li>{% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        This report is generated using publicly available rainfall (Open-Meteo), soil (SoilGrids / fallback zone table),
+        groundwater (CGWB public monitoring data), and elevation (OpenTopoData) sources, combined with a CGWB-style
+        deterministic sizing model and a supplementary ML estimate. It is intended as a preliminary planning aid and
+        does not replace a site survey or an official CGWB assessment. &copy; JalRakshak (DSC demo project).
+    </div>
+</body>
+</html>
