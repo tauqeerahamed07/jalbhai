@@ -1,0 +1,159 @@
+{
+  "wards": [
+    {
+      "ward": "Thiruvanmiyur",
+      "avg_rainfall_mm": 1450,
+      "avg_groundwater_depth_m": 4.5,
+      "built_up_density": 0.72,
+      "cluster": 2,
+      "cluster_score": 0.99999999627945
+    },
+    {
+      "ward": "Adyar",
+      "avg_rainfall_mm": 1420,
+      "avg_groundwater_depth_m": 5.0,
+      "built_up_density": 0.78,
+      "cluster": 2,
+      "cluster_score": 0.99999999627945
+    },
+    {
+      "ward": "Besant Nagar",
+      "avg_rainfall_mm": 1460,
+      "avg_groundwater_depth_m": 4.2,
+      "built_up_density": 0.68,
+      "cluster": 2,
+      "cluster_score": 0.99999999627945
+    },
+    {
+      "ward": "T. Nagar",
+      "avg_rainfall_mm": 1380,
+      "avg_groundwater_depth_m": 8.5,
+      "built_up_density": 0.92,
+      "cluster": 1,
+      "cluster_score": 0.0
+    },
+    {
+      "ward": "Anna Nagar",
+      "avg_rainfall_mm": 1360,
+      "avg_groundwater_depth_m": 10.0,
+      "built_up_density": 0.85,
+      "cluster": 1,
+      "cluster_score": 0.0
+    },
+    {
+      "ward": "Ambattur",
+      "avg_rainfall_mm": 1320,
+      "avg_groundwater_depth_m": 12.5,
+      "built_up_density": 0.8,
+      "cluster": 1,
+      "cluster_score": 0.0
+    },
+    {
+      "ward": "Tambaram",
+      "avg_rainfall_mm": 1480,
+      "avg_groundwater_depth_m": 14.0,
+      "built_up_density": 0.65,
+      "cluster": 0,
+      "cluster_score": 0.913561946141941
+    },
+    {
+      "ward": "Chromepet",
+      "avg_rainfall_mm": 1450,
+      "avg_groundwater_depth_m": 11.0,
+      "built_up_density": 0.7,
+      "cluster": 0,
+      "cluster_score": 0.913561946141941
+    },
+    {
+      "ward": "Porur",
+      "avg_rainfall_mm": 1340,
+      "avg_groundwater_depth_m": 13.0,
+      "built_up_density": 0.75,
+      "cluster": 1,
+      "cluster_score": 0.0
+    },
+    {
+      "ward": "Velachery",
+      "avg_rainfall_mm": 1410,
+      "avg_groundwater_depth_m": 6.5,
+      "built_up_density": 0.82,
+      "cluster": 2,
+      "cluster_score": 0.99999999627945
+    },
+    {
+      "ward": "Perambur",
+      "avg_rainfall_mm": 1350,
+      "avg_groundwater_depth_m": 9.0,
+      "built_up_density": 0.88,
+      "cluster": 1,
+      "cluster_score": 0.0
+    },
+    {
+      "ward": "Royapuram",
+      "avg_rainfall_mm": 1370,
+      "avg_groundwater_depth_m": 3.5,
+      "built_up_density": 0.9,
+      "cluster": 2,
+      "cluster_score": 0.99999999627945
+    },
+    {
+      "ward": "Mylapore",
+      "avg_rainfall_mm": 1430,
+      "avg_groundwater_depth_m": 5.5,
+      "built_up_density": 0.86,
+      "cluster": 2,
+      "cluster_score": 0.99999999627945
+    },
+    {
+      "ward": "Guindy",
+      "avg_rainfall_mm": 1390,
+      "avg_groundwater_depth_m": 7.0,
+      "built_up_density": 0.84,
+      "cluster": 2,
+      "cluster_score": 0.99999999627945
+    },
+    {
+      "ward": "Sholinganallur",
+      "avg_rainfall_mm": 1470,
+      "avg_groundwater_depth_m": 8.0,
+      "built_up_density": 0.6,
+      "cluster": 0,
+      "cluster_score": 0.913561946141941
+    },
+    {
+      "ward": "Madipakkam",
+      "avg_rainfall_mm": 1400,
+      "avg_groundwater_depth_m": 9.5,
+      "built_up_density": 0.77,
+      "cluster": 1,
+      "cluster_score": 0.0
+    },
+    {
+      "ward": "Ennore",
+      "avg_rainfall_mm": 1330,
+      "avg_groundwater_depth_m": 2.8,
+      "built_up_density": 0.55,
+      "cluster": 3,
+      "cluster_score": 0.7498339012322836
+    },
+    {
+      "ward": "Manali",
+      "avg_rainfall_mm": 1310,
+      "avg_groundwater_depth_m": 3.0,
+      "built_up_density": 0.5,
+      "cluster": 3,
+      "cluster_score": 0.7498339012322836
+    }
+  ],
+  "cluster_score_map": {
+    "0": 0.913561946141941,
+    "1": 0.0,
+    "2": 0.99999999627945,
+    "3": 0.7498339012322836
+  },
+  "feature_names": [
+    "avg_rainfall_mm",
+    "avg_groundwater_depth_m",
+    "built_up_density"
+  ]
+}

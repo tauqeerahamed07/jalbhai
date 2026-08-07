@@ -1,0 +1,42 @@
+{
+  "accuracy": 0.91125,
+  "classification_report": {
+    "percolation_tank": {
+      "precision": 0.9052224371373307,
+      "recall": 0.9873417721518988,
+      "f1-score": 0.9445005045408678,
+      "support": 474.0
+    },
+    "recharge_pit": {
+      "precision": 0.9375,
+      "recall": 0.5555555555555556,
+      "f1-score": 0.6976744186046512,
+      "support": 54.0
+    },
+    "recharge_shaft": {
+      "precision": 0.9206349206349206,
+      "recall": 0.8467153284671532,
+      "f1-score": 0.8821292775665399,
+      "support": 137.0
+    },
+    "recharge_trench": {
+      "precision": 0.92,
+      "recall": 0.8518518518518519,
+      "f1-score": 0.8846153846153846,
+      "support": 135.0
+    },
+    "accuracy": 0.91125,
+    "macro avg": {
+      "precision": 0.9208393394430628,
+      "recall": 0.8103661270066149,
+      "f1-score": 0.8522298963318609,
+      "support": 800.0
+    },
+    "weighted avg": {
+      "precision": 0.9125342741625987,
+      "recall": 0.91125,
+      "f1-score": 0.9070530571333941,
+      "support": 800.0
+    }
+  }
+}
